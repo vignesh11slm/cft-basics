@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: 2010-09-09
+Parameters:
+  bucketName:
+    Description: Enter the Bucket Name
+    Type: String
+Resources:
+  mybucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: !Ref bucketName
+Outputs:
+  BucketName:
+    Description: URL of the bucket
+    Value: !GetAtt 
+      - mybucket
+      - WebsiteURL
